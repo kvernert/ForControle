@@ -7,11 +7,14 @@
     */
 
     //ENTRADA
-
+    let lista = [];
 
     //PROCESSAMENTO
-
-
+    for(contador = 1; contador <= 5; contador++){
+        const numeros = Number(prompt(`Informe o número ${contador}`));
+        lista.push(numeros);
+    }
     //SAÍDA
+    document.write(lista.reverse((a,b)=> a - b)[0]);
 
 </script>

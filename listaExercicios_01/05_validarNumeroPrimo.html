@@ -4,13 +4,21 @@
     PROBLEMA
     Faça um programa que peça para o usuário informar um número. Identifique se o número fornecido pelo usuário é um número primo e apresente na tela.
     */
+    const numeroPrimo = parseInt(prompt("Informe qual número deseja validar se é número primo: "));
+    let divisivel = 0;
 
-    //ENTRADA
+    for (contador = 1; contador <= numeroPrimo; contador++){
+        if (numeroPrimo % contador === 0){
+            divisivel++; 
+            
+        } 
 
-
-    //PROCESSAMENTO
-
-
-    //SAÍDA
+    }
+    if(divisivel > 2){
+              document.write(`O número ${numeroPrimo} não é primo`);
+            }
+    else {
+            document.write(`O número ${numeroPrimo} é primo`);
+        }
 
 </script>

@@ -10,11 +10,17 @@
     */
 
     //ENTRADA
- kkk
-
+    let listaDeLetras = ["a", "b", "d", "e", "E", "F", "C", "U", "u", "e", "W", "D"];
+    let listaNova = [];
+    
     //PROCESSAMENTO
-
-
+    for(let controle = 0; controle <= listaDeLetras.length - 1; controle++){
+        let elemento = listaDeLetras[controle].toLowerCase();
+        if(listaNova.indexOf(elemento) === -1){
+            listaNova.push(elemento);
+        }
+    }
     //SAÍDA
+    document.write(listaNova.sort());
 
 </script>
