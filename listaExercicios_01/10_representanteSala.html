@@ -23,19 +23,19 @@
     //PROCESSAMENTO
     candidatos.push(aluno1,aluno2,aluno3);
     for(let contador = 1; contador <= quantidadeDeAlunos; contador++){
-       const qualVoto = prompt(`Informe em quem deseja votar ${candidatos}`);
+       const qualVoto = prompt(`Informe em quem deseja votar 1 para: ${aluno1}, 2 para ${aluno2}, 3 para ${aluno3}`);
 
-        if(qualVoto != aluno1 && qualVoto != aluno2 && qualVoto != aluno3){
+        if(qualVoto != 1 && qualVoto != 2 && qualVoto != 3){
             document.write(`Candidato Inválido`);
         }
         else{
-            if(qualVoto === aluno1){
+            if(qualVoto === 1){
                 aluno1Voto = aluno1Voto + 1;
             }
-            else if(qualVoto === aluno2){
+            else if(qualVoto === 2){
                 aluno2Voto = aluno2Voto + 1;
             }
-            else if(qualVoto === aluno3){
+            else if(qualVoto === 3){
                 aluno3Voto = aluno3Voto + 1;
             }
         }
@@ -49,9 +49,15 @@
         representante.push(aluno3)
         votoVencedor.push(aluno3Voto)
     } }
+    const porAluno1 =  ((aluno1Voto.length*100) / quantidadeDeAlunos);
+    const porAluno2 =  ((aluno2Voto.length*100) / quantidadeDeAlunos);
+    const porAluno3 =  ((aluno3Voto.length*100) / quantidadeDeAlunos);
 
 
     //SAÍDA
     document.write(`O representante de sala vencedor é: ${representante}.</br> `);
     document.write(`Com ${votoVencedor} votos.`);
+    document.write(`O aluno ${aluno1},ficou com a porcentagem ${porAluno1}`);
+    document.write(`O aluno ${aluno2},ficou com a porcentagem ${porAluno2}`);
+    document.write(`O aluno ${aluno3},ficou com a porcentagem ${porAluno3}`);
 </script>
