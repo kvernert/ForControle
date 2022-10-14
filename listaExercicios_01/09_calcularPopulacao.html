@@ -6,11 +6,24 @@
     */
 
     //ENTRADA
-
+    let habitantes = 50000;
 
     //PROCESSAMENTO
+    let habitantes5Anos = 0;
+    let habitantes10Anos = 0;
 
+    for(let contador = 1; contador <= 10; contador++){
+        habitantes = habitantes * 1.015;
+        if(contador === 5){
+            habitantes5Anos = Math.floor(habitantes);
+        }
+        else{
+            habitantes10Anos = Math.floor(habitantes);
+        }
+    }
 
     //SAÍDA
+    document.write(`Número de habitantes em 5 anos: ${habitantes5Anos}</br>`);
+    document.write(`Número de habitantes em 10 anos: ${habitantes10Anos}</br>`);
 
 </script>

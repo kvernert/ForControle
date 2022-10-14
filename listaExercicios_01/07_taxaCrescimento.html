@@ -6,11 +6,16 @@
     */
 
     //ENTRADA
-
+    let populacaoAtual = 80000;
+    const populacaoEstimada = 200000;
+    const taxaCrescimento = 0.03;
 
     //PROCESSAMENTO
-
-
+    let anos = 0;
+    for(anos = 1; populacaoAtual <= populacaoEstimada; anos++){
+        populacaoAtual = populacaoAtual + (populacaoAtual * taxaCrescimento);
+    }
     //SAÍDA
+    document.write(`Serão necessários ${anos} para atingir 200.000 habitantes`);
 
 </script>
