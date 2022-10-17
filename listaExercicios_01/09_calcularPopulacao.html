@@ -9,16 +9,17 @@
     let habitantes = 50000;
 
     //PROCESSAMENTO
+
     let habitantes5Anos = 0;
     let habitantes10Anos = 0;
 
-    for(let contador = 1; contador <= 10; contador++){
-        habitantes = habitantes * 1.015;
+    for(let contador = 0; contador <= 10; contador++){
+        habitantes = habitantes + habitantes * 0.015;
         if(contador === 5){
-            habitantes5Anos = Math.floor(habitantes);
+            habitantes5Anos = parseInt(habitantes);
         }
         else{
-            habitantes10Anos = Math.floor(habitantes);
+            habitantes10Anos = parseInt(habitantes);
         }
     }
 

@@ -8,56 +8,23 @@
     */
 
     //ENTRADA
-    const aluno1 = prompt("Informe qual o nome do primeiro candidato: ");
-    const aluno2 = prompt("Informe qual o nome do segundo candidato: ");
-    const aluno3 = prompt("Informe qual o nome do terceiro candidato: ");
-    const quantidadeDeAlunos = Number(prompt("Informe quantos alunos irão votar: "));
+    const candidato1 = prompt("Informe o nome do candidato 1: "); 
+    const candidato2 = prompt("Informe o nome do candidato 1:");
+    const candidato3 = prompt("Informe o nome do candidato 3:");
+    let votosCand1 = 0;
+    let votosCand2 = 0;
+    let votosCand3 = 0;
+    const quantVotantes = Number(prompt("Informe o número de alunos votantes: "));
 
-    let candidatos = [];
-    let aluno1Voto = 0;
-    let aluno2Voto = 0;
-    let aluno3Voto = 0;
-    let representante = [];
-    let votoVencedor = [];
-
-    //PROCESSAMENTO
-    candidatos.push(aluno1,aluno2,aluno3);
-    for(let contador = 1; contador <= quantidadeDeAlunos; contador++){
-       const qualVoto = prompt(`Informe em quem deseja votar 1 para: ${aluno1}, 2 para ${aluno2}, 3 para ${aluno3}`);
-
-        if(qualVoto != 1 && qualVoto != 2 && qualVoto != 3){
-            document.write(`Candidato Inválido`);
-        }
-        else{
-            if(qualVoto === 1){
-                aluno1Voto = aluno1Voto + 1;
-            }
-            else if(qualVoto === 2){
-                aluno2Voto = aluno2Voto + 1;
-            }
-            else if(qualVoto === 3){
-                aluno3Voto = aluno3Voto + 1;
-            }
-        }
-     if(aluno1Voto < aluno2Voto && aluno1Voto < aluno3Voto){
-        representante.push(aluno1)
-        votoVencedor.push(aluno1Voto)
-    } else if (aluno2Voto < aluno1Voto && aluno2Voto < aluno3Voto){
-        representante.push(aluno2)
-        votoVencedor.push(aluno2Voto)
-    } else if (aluno3Voto < aluno1Voto && aluno3Voto < aluno2Voto){
-        representante.push(aluno3)
-        votoVencedor.push(aluno3Voto)
-    } }
-    const porAluno1 =  ((aluno1Voto.length*100) / quantidadeDeAlunos);
-    const porAluno2 =  ((aluno2Voto.length*100) / quantidadeDeAlunos);
-    const porAluno3 =  ((aluno3Voto.length*100) / quantidadeDeAlunos);
-
-
-    //SAÍDA
-    document.write(`O representante de sala vencedor é: ${representante}.</br> `);
-    document.write(`Com ${votoVencedor} votos.`);
-    document.write(`O aluno ${aluno1},ficou com a porcentagem ${porAluno1}`);
-    document.write(`O aluno ${aluno2},ficou com a porcentagem ${porAluno2}`);
-    document.write(`O aluno ${aluno3},ficou com a porcentagem ${porAluno3}`);
+    for(let contador =1; contador <= quantVotantes; contador++){
+        const votos = Number(prompt(`Informe em quem deseja votar: 1-${candidato1}, 2-${candidato2}, 3-${candidato3}`));
+        (votos === 1) ? votosCand1++ : (votos === 2) ? votosCand2++ : votosCand3++;
+    }
+    const percCand1 = parseInt(votosCand1 / quantVotantes * 100);
+    const percCand2 = parseInt(votosCand2 / quantVotantes *100);
+    const percCand3 = parseInt(votosCand3 / quantVotantes *100);
+    document.write(`${candidato1} - Votos: ${votosCand1} (${percCand1}%)</br>`);
+    document.write(`${candidato2} - Votos: ${votosCand2} (${percCand2}%)</br>`);
+    document.write(`${candidato3} - Votos: ${votosCand3} (${percCand3}%)`);
+    
 </script>
